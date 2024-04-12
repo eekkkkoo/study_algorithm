@@ -1,0 +1,25 @@
+from typing import Any, Sequence
+
+def seq_search(a: Sequence, key: Any) -> int:
+    i = 0
+    
+    for i in range(len(a)):
+        if a[i] == key:
+            return i
+        return -1
+
+if __name__ == '__main__':
+    num = int(input('input number of element: '))
+    x = [None] * num
+    
+    for i in range(num):
+        x[i] = int(input(f'x[{i}]: '))
+        
+    ky = int(input('input searching number: '))
+    
+    idx = seq_search(x, ky)
+    
+    if idx == -1:
+        print('searching number is None')
+    else:
+        print(f'searching number is in x[{idx}]')
